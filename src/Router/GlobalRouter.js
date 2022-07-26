@@ -5,7 +5,7 @@ export default function GlobalRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/https://www.facebook.com/bulutmdyazilim" />
+        
       </Routes>
     </BrowserRouter>
   );
