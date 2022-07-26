@@ -3,8 +3,10 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import GlobalRouter from './Router/GlobalRouter';
+import database from './Dataset/database.json';
 
 function App() {
+  
   return (
     <>
    <Header/>
