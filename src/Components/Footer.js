@@ -96,7 +96,6 @@ export default function Footer() {
                     sx={{
                       width: 30,
                       height: 30,
-
                       alignSelf: "center",
                     }}
                   />
