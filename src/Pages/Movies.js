@@ -11,7 +11,7 @@ function Movies() {
     
   return (
     <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"4%",width:"100%",height:"100%",flexWrap:"wrap",marginBottom:"5%"}}>
-   {database.entries.map(database => { 
+   {database.entries.map(database=> { 
     return(
         <Link href="/Movies" underline='none'  sx={{width:"20%",textDecoration:"none",alignSelf:"center",m:2 }}>
     <Paper elevation={5} className="movies-card">

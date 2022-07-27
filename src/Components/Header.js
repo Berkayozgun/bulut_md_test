@@ -9,17 +9,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+
+
+
 
 const pages = [
   <Button
@@ -45,25 +38,17 @@ const pages = [
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
-    <AppBar position="static" sx={{backgroundColor: "black"}}>
+    <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -79,7 +64,7 @@ const ResponsiveAppBar = () => {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
-              marginLeft:"3%"
+              marginLeft: "3%",
             }}
           >
             BulutMD
@@ -136,7 +121,7 @@ const ResponsiveAppBar = () => {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
-              marginLeft:"3%"
+              marginLeft: "3%",
             }}
           >
             BulutMD
@@ -160,85 +145,56 @@ const ResponsiveAppBar = () => {
         </Toolbar>
       </Container>
 
-
-
-
-
-      <AppBar position="static" sx={{backgroundColor: "#52525B"}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Segoe UI",
-              fontWeight: 100,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              marginLeft:"3%"
-            }}
-          >
-            Popüler Başlıklar
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+      <AppBar position="static" sx={{ backgroundColor: "#52525B" }}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "Segoe UI",
+                fontWeight: 100,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+                marginLeft: "3%",
+              }}
             >
-             
-            </IconButton>
-            
-          </Box>
+              Popüler Başlıklar
+            </Typography>
 
-          <Typography
-            variant="h5"
-            noWrap
-           
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "Segoe UI",
-              fontWeight: 100,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-           Popüler Başlıklar
-          </Typography>
-         
-        </Toolbar>
-      </Container>
-     
-    </AppBar>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              ></IconButton>
+            </Box>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
+            <Typography
+              variant="h5"
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "Segoe UI",
+                fontWeight: 100,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Popüler Başlıklar
+            </Typography>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </AppBar>
   );
 };
