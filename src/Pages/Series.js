@@ -12,18 +12,18 @@ function Series() {
     <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"4%",width:"100%",height:"100%",flexWrap:"wrap",marginBottom:"5%"}}>
    {database.entries.map(database=> { 
     return(
-        <Link href="/Movies" underline='none'  sx={{width:"20%",textDecoration:"none",alignSelf:"center",m:2 }}>
+        <Link href="/Movies" underline='none'  sx={{width:"15rem",textDecoration:"none",alignSelf:"center",m:5,justifyContent:"center",height:"25rem"}}>
     <Paper elevation={5} className="movies-card">
       <CardMedia
         resize="cover"
         component="img"
-        height="340"
+        height="350rem"
         image={database.images["Poster Art"].url}
         alt="green iguana"
 
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div" sx={{textAlign: "center",justifyContent: "center"}}>
+      <CardContent sx={{height:"2rem",alignSelf:"center",justifyContent:"center",textAlign:"center"}}>
+        <Typography gutterBottom variant="h5" component="div" sx={{textAlign: "center",justifyContent: "center",alignSelf:"center", fontSize:"1rem",}}>
          {database.title}
         </Typography>
         
