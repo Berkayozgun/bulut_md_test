@@ -19,7 +19,7 @@ function Movies() {
         resize="cover"
         component="img"
         height="340"
-        image={database.images.url}
+        image={database.images["Poster Art"].url}
         alt="green iguana"
 
       />
