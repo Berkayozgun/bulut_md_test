@@ -65,7 +65,7 @@ function Series() {
 
   return (
     
-    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"2%",width:"99%",height:"100%",flexWrap:"wrap",}}>
+    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"2%",width:"99%",height:"100%",flexWrap:"wrap",marginBottom:"4rem"}}>
 
     <Box sx={{display: 'flex',flexDirection:"row",justifyContent:"center",alignSelf:'left',width:"100%"}}>
       <Search sx={{justifyContent:'flex-start'}}>
