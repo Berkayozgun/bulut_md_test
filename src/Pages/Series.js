@@ -6,61 +6,13 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import database from "../Dataset/database.json";
-import SearchIcon from "@mui/icons-material/Search";
-import { styled, alpha } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
+
+import SearchBar from "../Components/SearchBar";
+import Sort from "../Components/Sort";
+
 
 function Series() {
-  const Search = styled("div")(({ theme }) => ({
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto",
-    },
-  }));
-
-  const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }));
-
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    borderWidth: 1,
-    borderRadius: "1rem",
-    borderStyle: "solid",
-    height: "3rem",
-    borderColor: theme.palette.common.black,
-    color: "inherit",
-    "& .MuiInputBase-input": {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create("width"),
-      width: "100%",
-      [theme.breakpoints.up("sm")]: {
-        width: "20ch",
-        "&:focus": {
-          width: "20ch",
-        },
-      },
-    },
-  }));
+  
 
   return (
     <Box
@@ -85,39 +37,8 @@ function Series() {
           width: "100%",
         }}
       >
-        <Search sx={{ justifyContent: "flex-start" }}>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            sx={{
-              width: "25rem",
-              height: "3.5rem",
-              justifyContent: "flex-start",
-            }}
-            placeholder=" Film / Dizi / Oyuncu ara"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
-
-        <Box
-          sx={{ justifyContent: "flex-end", width: "15rem", marginLeft: "25%" }}
-        >
-          <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Sırala</InputLabel>
-            <Select
-              sx={{ width: "15rem" }}
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Age"
-            >
-              <MenuItem value={10}>Yeniye Göre Sırala</MenuItem>
-              <MenuItem value={20}>Eskiye Göre Sırala</MenuItem>
-              <MenuItem value={30}>Puana Göre Sırala</MenuItem>
-              <MenuItem value={40}>Rastgele Sırala</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
+        <SearchBar />
+        <Sort/>
       </Box>
       {database.entries.slice(0, 16).map(
         (database) =>
