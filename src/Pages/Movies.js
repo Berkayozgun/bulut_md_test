@@ -6,15 +6,10 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import database from "../Dataset/database.json";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
 import SearchBar from "../Components/SearchBar";
 import Sort from "../Components/Sort";
 
 function Movies() {
-  
   return (
     <Box
       sx={{
@@ -38,10 +33,9 @@ function Movies() {
           width: "100%",
         }}
       >
-        <SearchBar/>
+        <SearchBar />
 
-       <Sort/>
-
+        <Sort />
       </Box>
 
       {database.entries.slice(0, 64).map(

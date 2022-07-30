@@ -6,14 +6,10 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import database from "../Dataset/database.json";
-
 import SearchBar from "../Components/SearchBar";
 import Sort from "../Components/Sort";
 
-
 function Series() {
-  
-
   return (
     <Box
       sx={{
@@ -38,7 +34,7 @@ function Series() {
         }}
       >
         <SearchBar />
-        <Sort/>
+        <Sort />
       </Box>
       {database.entries.slice(0, 16).map(
         (database) =>
