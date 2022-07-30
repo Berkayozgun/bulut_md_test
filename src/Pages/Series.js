@@ -1,90 +1,36 @@
-import React from "react";
-import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import React, { useState } from "react";
 import database from "../Dataset/database.json";
-import SearchBar from "../Components/SearchBar";
-import Sort from "../Components/Sort";
+import { TextField } from "@mui/material";
+import SeriesList from "../Components/SeriesList";
+import Box from "@mui/material/Box";
 
-function Series() {
+function Series(props) {
+  const [inputText, setInputText] = useState("");
+  let inputHandler = (e) => {
+    //convert input text to lower case
+    var lowerCase = e.target.value.toLowerCase();
+    setInputText(lowerCase);
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: "2%",
-        width: "99%",
-        height: "100%",
-        flexWrap: "wrap",
-        marginBottom: "4rem",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignSelf: "left",
-          width: "100%",
-        }}
-      >
-        <SearchBar />
-        <Sort />
-      </Box>
-      {database.entries.slice(0, 16).map(
-        (database) =>
-          database.programType === "series" && (
-            <Link
-              href="/Series"
-              underline="none"
-              sx={{
-                width: "15rem",
-                textDecoration: "none",
-                alignSelf: "center",
-                m: 5,
-                justifyContent: "center",
-                height: "25rem",
-              }}
-            >
-              <Paper elevation={5} className="movies-card">
-                <CardMedia
-                  resize="cover"
-                  component="img"
-                  height="350rem"
-                  image={database.images["Poster Art"].url}
-                  alt="green iguana"
-                />
-                <CardContent
-                  sx={{
-                    height: "2rem",
-                    alignSelf: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                  }}
-                >
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{
-                      textAlign: "center",
-                      justifyContent: "center",
-                      alignSelf: "center",
-                      fontSize: "1rem",
-                    }}
-                  >
-                    {database.title}
-                  </Typography>
-                </CardContent>
-              </Paper>
-            </Link>
-          )
-      )}
+    <Box>
+      
+        <TextField
+          sx={{
+            width: "25rem",
+            height: "3.5rem",
+            justifyContent: "flex-start",
+            marginTop:"2.5rem",
+            marginLeft:"9.5rem"
+          }}
+          id="outlined-basic"
+          onChange={inputHandler}
+          variant="outlined"
+          fullWidth
+          label="Film / Dizi / Oyuncu ara"
+        />
+      
+      <SeriesList input={inputText} />
     </Box>
   );
 }
