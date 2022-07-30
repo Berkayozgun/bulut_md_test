@@ -6,10 +6,70 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import database from '../Dataset/database.json';
+import SearchIcon from '@mui/icons-material/Search';
+import { styled, alpha } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 
 function Series() {
+
+  const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  }));
+  
+  const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    borderWidth: 1,
+    borderRadius: "1rem",
+    borderStyle: 'solid',
+    height: "3rem",
+    borderColor: theme.palette.common.black,
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '20ch',
+        '&:focus': {
+          width: '20ch',
+        },
+      },
+    },
+  }));
+
   return (
     <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"4%",width:"100%",height:"100%",flexWrap:"wrap",marginBottom:"5%"}}>
+    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'flex-start',alignSelf:'left',width:"100rem",height:"20%",marginLeft:"9rem"}}><Search>
+            <SearchIconWrapper >
+              <SearchIcon />
+            </SearchIconWrapper >
+            <StyledInputBase  sx={{width:"25rem",height:"3.5rem"}}
+              placeholder=" Film / Dizi / Oyuncu ara"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search></Box>
    {database.entries.map(database=> { 
     return(
         <Link href="/Movies" underline='none'  sx={{width:"15rem",textDecoration:"none",alignSelf:"center",m:5,justifyContent:"center",height:"25rem"}}>
