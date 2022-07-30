@@ -9,6 +9,10 @@ import database from '../Dataset/database.json';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
 
 function Series() {
 
@@ -60,16 +64,39 @@ function Series() {
   }));
 
   return (
-    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"4%",width:"100%",height:"100%",flexWrap:"wrap",marginBottom:"5%"}}>
-    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'flex-start',alignSelf:'left',width:"100rem",height:"20%",marginLeft:"9rem"}}><Search>
+    
+    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"2%",width:"99%",height:"100%",flexWrap:"wrap",}}>
+
+    <Box sx={{display: 'flex',flexDirection:"row",justifyContent:"center",alignSelf:'left',width:"100%"}}>
+      <Search sx={{justifyContent:'flex-start'}}>
             <SearchIconWrapper >
               <SearchIcon />
             </SearchIconWrapper >
-            <StyledInputBase  sx={{width:"25rem",height:"3.5rem"}}
+            <StyledInputBase  sx={{width:"25rem",height:"3.5rem",justifyContent:'flex-start'}}
               placeholder=" Film / Dizi / Oyuncu ara"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search></Box>
+          </Search>
+
+          <Box sx={{ justifyContent: 'flex-end',width:"15rem",marginLeft:"25%" }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Sırala</InputLabel>
+        <Select sx={{width:"15rem"}}
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+         
+          label="Age"
+          
+        >
+          <MenuItem value={10}>Yeniye Göre Sırala</MenuItem>
+          <MenuItem value={20}>Eskiye Göre Sırala</MenuItem>
+          <MenuItem value={30}>Puana Göre Sırala</MenuItem>
+          <MenuItem value={40}>Rastgele Sırala</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+
+          </Box>
    {database.entries.map(database=> { 
     return(
         <Link href="/Movies" underline='none'  sx={{width:"15rem",textDecoration:"none",alignSelf:"center",m:5,justifyContent:"center",height:"25rem"}}>
