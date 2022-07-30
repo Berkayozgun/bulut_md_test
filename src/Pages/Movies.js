@@ -68,7 +68,7 @@ function Movies() {
   return (
 
 
-    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"2%",width:"99%",height:"100%",flexWrap:"wrap",}}>
+    <Box sx={{display: 'flex',flexDirection:"row",justifyContent: 'center',alignItems: 'center',marginTop:"2%",width:"99%",height:"100%",flexWrap:"wrap",marginBottom:"4rem"}}>
 
     <Box sx={{display: 'flex',flexDirection:"row",justifyContent:"center",alignSelf:'left',width:"100%"}}>
       <Search sx={{justifyContent:'flex-start'}}>
@@ -84,7 +84,7 @@ function Movies() {
           <Box sx={{ justifyContent: 'flex-end',width:"15rem",marginLeft:"25%" }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Sırala</InputLabel>
-        <Select sx={{width:"15rem"}}
+        <Select sx={{width:"1rem"}}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
          
@@ -101,32 +101,33 @@ function Movies() {
 
           </Box>
 
-   {database.entries.map(database=> { 
-    return(
-        <Link href="/Movies" underline='none'  sx={{width:"15rem",textDecoration:"none",alignSelf:"center",m:5,justifyContent:"center",height:"25rem" }}>
-    <Paper elevation={5} className="movies-card">
-      <CardMedia
-        resize="stretch"
-        component="img"
-        height="350rem"
-        image={database.images["Poster Art"].url}
-        alt="green iguana"
-
-      />
-      <CardContent sx={{height:"2rem",alignSelf:"center",justifyContent:"center",textAlign:"center"}}>
-        <Typography  component="div" sx={{textAlign: "center",justifyContent: "center",alignSelf:"center",  fontSize:15}}>
-         {database.title}
-        </Typography>
+   {database.entries.map(
+ database =>
+    database.programType === "movie" && (
+      <Link href="/Movies" underline='none'  sx={{width:"15rem",textDecoration:"none",alignSelf:"center",m:5,justifyContent:"center",height:"25rem" }}>
+      <Paper elevation={5} className="movies-card">
+        <CardMedia
+          resize="stretch"
+          component="img"
+          height="350rem"
+          image={database.images["Poster Art"].url}
+          alt="green iguana"
+  
+        />
+        <CardContent sx={{height:"2rem",alignSelf:"center",justifyContent:"center",textAlign:"center"}}>
+          <Typography  component="div" sx={{textAlign: "center",justifyContent: "center",alignSelf:"center",  fontSize:15}}>
+           {database.title}
+          </Typography>
+          
+        </CardContent>
         
-      </CardContent>
-      
-    </Paper>
-    </Link>
+      </Paper>
+      </Link>
     )
-   }
-    )}
+)}
     </Box>
   )
 }
 
 export default Movies
+

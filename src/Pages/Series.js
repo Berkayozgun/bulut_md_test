@@ -97,8 +97,9 @@ function Series() {
     </Box>
 
           </Box>
-   {database.entries.map(database=> { 
-    return(
+   {database.entries.map(database=> 
+      database.programType === "series" && (
+    
         <Link href="/Movies" underline='none'  sx={{width:"15rem",textDecoration:"none",alignSelf:"center",m:5,justifyContent:"center",height:"25rem"}}>
     <Paper elevation={5} className="movies-card">
       <CardMedia
@@ -118,9 +119,9 @@ function Series() {
       
     </Paper>
     </Link>
-    )
+    ))
    }
-    )}
+    
     </Box>
   )
 }
