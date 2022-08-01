@@ -1,5 +1,5 @@
 
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import database from "../Dataset/database.json";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
@@ -8,9 +8,12 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-import Sort from "./Sort";
+
 
 function MovieList(props) {
+
+  /* Arama fonksiyonu*/
+
     const filteredData = database.entries.filter((el) => {
         if (props.input === '') {
             return el;
@@ -18,6 +21,12 @@ function MovieList(props) {
             return el.title.toLowerCase().includes(props.input)
         }
     })
+
+
+    /* Sıralama fonksiyonu*/
+
+ 
+
     return (
         <Box
         sx={{
@@ -32,17 +41,8 @@ function MovieList(props) {
           marginBottom: "4rem",
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignSelf: "left",
-            width: "100%",
-          }}
-        > 
         
-        </Box>
+       
             {filteredData.map((database) =>
           database.programType === "movie" && (
                 <Link
@@ -85,6 +85,7 @@ function MovieList(props) {
                       }}
                     >
                       {database.title}
+                      
                     </Typography>
                   </CardContent>
                 </Paper>
