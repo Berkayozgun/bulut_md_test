@@ -12,7 +12,7 @@ function Homepage() {
       sx={{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
         alignItems: "center",
         marginTop: "4%",
         width: "100%",
@@ -22,7 +22,14 @@ function Homepage() {
       <Link
         href="/Movies"
         underline="none"
-        sx={{ width: "20%", textDecoration: "none", alignSelf: "center" }}
+        sx={{
+          width: "15rem",
+          textDecoration: "none",
+          alignSelf: "center",
+          m: 5,
+          justifyContent: "center",
+          height: "25rem",
+        }}
       >
         <Paper elevation={5} className="movies-card">
           <CardMedia
@@ -48,7 +55,14 @@ function Homepage() {
       <Link
         href="/Series"
         underline="none"
-        sx={{ width: "20%", textDecoration: "none", marginLeft: "20%" }}
+        sx={{
+          width: "15rem",
+          textDecoration: "none",
+          alignSelf: "center",
+          m: 5,
+          justifyContent: "center",
+          height: "25rem",
+        }}
       >
         <Paper elevation={5} className="series-card">
           <CardMedia
