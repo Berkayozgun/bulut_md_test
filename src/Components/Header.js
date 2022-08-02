@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
+                                                                                          /* Responsive hale geldiğinde hamburger menu seçenekleri*/
   <Button
     sx={{
       noCamelCase: true,
@@ -47,7 +48,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+          <Typography                                                                                     /*  Header başlığı */
             variant="h6"
             noWrap
             component="a"
@@ -67,7 +68,7 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
+            <IconButton                                                                                 /*  Responsive hale geldiginde header  */
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -103,7 +104,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
 
-          <Typography
+          <Typography                                                                              /*  Responsive hale geldigindeki tasarim*/
             variant="h5"
             noWrap
             component="a"
@@ -144,7 +145,7 @@ const ResponsiveAppBar = () => {
       <AppBar position="static" sx={{ backgroundColor: "#52525B" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
+            <Typography                                                                                     /*  Header altında bulunan popüler başlıklar sekmesi */
               variant="h6"
               noWrap
               sx={{
@@ -161,17 +162,6 @@ const ResponsiveAppBar = () => {
               Popüler Başlıklar
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              ></IconButton>
-            </Box>
-
             <Typography
               variant="h5"
               noWrap
@@ -184,6 +174,7 @@ const ResponsiveAppBar = () => {
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
+                justifyContent: "center",
               }}
             >
               Popüler Başlıklar

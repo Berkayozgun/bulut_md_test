@@ -7,7 +7,7 @@ import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import Toolbar from "@mui/material/Toolbar";
 import twitterLogo from "../Images/twitterIcon.png";
 
-export default function Footer() {
+export default function Footer() {                      /* Footer componenti*/
   return (
     <React.Fragment>
       <AppBar
@@ -15,7 +15,7 @@ export default function Footer() {
         color="primary"
         sx={{
           top: "auto",
-          bottom: 0,
+          bottom: 0,                                         
           backgroundColor: "#27272A",
           display: "flex",
         }}
@@ -38,7 +38,7 @@ export default function Footer() {
               },
             }}
           >
-            <Box
+            <Box                                                            /* Yönlendirmelerin bulunduğu linkler ve scriptler */
               sx={{
                 display: "flex",
                 flexDirection: "row",
@@ -46,7 +46,7 @@ export default function Footer() {
                 justifyContent: "space-around",
               }}
             >
-              <Link
+              <Link                                                            /* Anasayfa Linki*/
                 href="/"
                 underline="hover"
                 sx={{ top: "auto", bottom: 0, color: "white" }}
@@ -58,7 +58,7 @@ export default function Footer() {
                 flexItem
                 sx={{ backgroundColor: "white" }}
               />
-              <Link
+              <Link                                                             /* Kullanıcı Sözleşmesi Linki */
                 href="/UserAgreement"
                 underline="hover"
                 sx={{ top: "auto", bottom: 0, color: "white" }}
@@ -70,7 +70,7 @@ export default function Footer() {
                 flexItem
                 sx={{ backgroundColor: "white", ml: 2 }}
               />
-              <Link
+              <Link                                                              /* Gizlilik Sözleşmesi Linki */
                 href="/PrivacyAgreement"
                 underline="hover"
                 sx={{ top: "auto", bottom: 0, color: "white" }}
@@ -79,8 +79,8 @@ export default function Footer() {
               </Link>
             </Box>
 
-            <Box sx={{ display: "flex", justifyContent: "flex-end", ml: 5 }}>
-              <a href="https://www.facebook.com/bulutmdyazilim">
+            <Box sx={{ display: "flex", justifyContent: "flex-end", ml: 5 }}    /* Şirket Facebook Linki*/ > 
+              <a href="https://www.facebook.com/bulutmdyazilim">                            
                 <FacebookTwoToneIcon sx={{ color: "white", fontSize: 30 }} />
               </a>
 
@@ -89,8 +89,8 @@ export default function Footer() {
                   alignSelf: "center",
                 }}
               >
-                <a href="https://twitter.com/bulut_mdyazilim">
-                  <Box
+                <a href="https://twitter.com/bulut_mdyazilim">                                  
+                  <Box                                                            /* Şirket Twitter Linki*/
                     component="img"
                     src={twitterLogo}
                     sx={{

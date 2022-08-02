@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 
-function Homepage() {
+function Homepage() {                                                                              /* Site ilk açıldığında gözüken anasayfa */
   return (
     <Box
       sx={{
@@ -21,7 +21,7 @@ function Homepage() {
           marginBottom: "4rem",
       }}
     >
-      <Link
+      <Link                                                                              /* Film kategorisine yönlendiren kart */
         href="/Movies"
         underline="none"
         sx={{
@@ -42,19 +42,19 @@ function Homepage() {
             alt="green iguana"
           />
           <CardContent>
-            <Typography
+            <Typography                                                                              /* Kategori adı*/
               gutterBottom
               variant="h5"
               component="div"
               sx={{ textAlign: "center", justifyContent: "center" }}
             >
-              Film
+              Film 
             </Typography>
           </CardContent>
         </Paper>
       </Link>
 
-      <Link
+      <Link                                                                             /* Dizi kategorisine yönlendiren kart */
         href="/Series"
         underline="none"
         sx={{

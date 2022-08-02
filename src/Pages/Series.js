@@ -8,34 +8,37 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function Series(props) {
-  const [inputText, setInputText] = useState("");
+function Series() {                                                        /* Film kategorisinin sayfası */
+  
 
-  let inputHandler = (e) => {
-    //convert input text to lower case
+  const [inputText, setInputText] = useState("");                          /* Arama kutusuna girilen text'in tutulduğu state */
+
+  let inputHandler = (e) => {                                            /* Girilen text'in küçük harfe dönüştürülmesi*/   
+   
     var lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
 
   
 //eslint-disable-next-line
-  const [data, setData] = useState([]);  
-  const [sortType, setSortType] = useState([]);
+  const [data, setData] = useState([]);                                      /* Filmlerin sıralamasının uygulandığı state */
+  
+  const [sortType, setSortType] = useState([]);                            /*  Filmlerin sıralama tipinin tutulduğu state */
   useEffect(() => {
-    if (sortType === null) {
+    if (sortType === null) {                                             /*  sıralama filtresi null olduğundaki state ataması*/
       setData(database.entries);
-    } else if (sortType === "asc") {
+    } else if (sortType === "asc") {                                     /*  Eskiye göre sıralama filtresi seçilirse uygulanan fonksiyon*/
       database.entries.sort((a, b) => {
         return b.releaseYear - a.releaseYear;
       });
-    } else if (sortType === "desc") {
+    } else if (sortType === "desc") {                                   /* Yeniye göre sıralama filtresi seçilirse uygulanan fonksiyon*/
       database.entries.sort((a, b) => {
         return a.releaseYear - b.releaseYear;
       });
     } else setData(database.entries);
   }, [sortType]);
 
-  const handleChange = (e) => {
+  const handleChange = (e) => {                                         /* Select kısmından seçilen değere göre state'in sortType olarak atanması*/
     setSortType(e.target.value);
   };
 
@@ -49,7 +52,7 @@ function Series(props) {
           flexWrap: "wrap",
           marginBottom: "4rem",
         }}>
-      <TextField
+      <TextField                                                       /* Arama kutusu */
         sx={{
           width: "20rem",
           height: "3.5rem",

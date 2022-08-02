@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 
 
 function MovieList(props) {
+                                                                                      /* Arama fonksiyonu*/
     const filteredData = database.entries.filter((el) => {
         if (props.input === '') {
             return el;
@@ -18,7 +19,7 @@ function MovieList(props) {
         }
     })
     return (
-        <Box
+        <Box                                                                                /* Dizi kartlarını içeren container*/
         sx={{
           display: "flex",
           flexDirection: "row",
@@ -42,9 +43,9 @@ function MovieList(props) {
         > 
         
         </Box>
-            {filteredData.map((database) =>
-          database.programType === "series" && (
-                <Link
+            {filteredData.map((database) =>                                                 /* programType' a göre koşullu render eden fonksiyon*/
+          database.programType === "series" && (                                                  
+                <Link                                                                       /* Dizi posteri ve ismini içeren kart*/
                 href="/Series"
                 underline="none"
                 sx={{
@@ -57,7 +58,7 @@ function MovieList(props) {
                 }}
               >
                 <Paper elevation={5} className="series-card">
-                  <CardMedia
+                  <CardMedia                                                       /* Dizinin posteri */
                     resize="cover"
                     component="img"
                     height="350rem"
@@ -72,7 +73,7 @@ function MovieList(props) {
                       textAlign: "center",
                     }}
                   >
-                    <Typography
+                    <Typography                                                   /* Dizinin adı*/
                       gutterBottom
                       variant="h5"
                       component="div"
