@@ -17,7 +17,9 @@ function Series(props) {
     setInputText(lowerCase);
   };
 
-  const [data, setData] = useState([]);
+  
+//eslint-disable-next-line
+  const [data, setData] = useState([]);  
   const [sortType, setSortType] = useState([]);
   useEffect(() => {
     if (sortType === null) {
