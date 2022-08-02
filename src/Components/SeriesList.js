@@ -1,5 +1,5 @@
 
-import { React, useState } from 'react'
+import React from 'react'
 import database from "../Dataset/database.json";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
@@ -8,7 +8,6 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-import Sort from "./Sort";
 
 function MovieList(props) {
     const filteredData = database.entries.filter((el) => {

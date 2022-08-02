@@ -15,6 +15,7 @@ function Movies() {
     var lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
+  // eslint-disable-next-line
   const [data, setData] = useState([]);
   const [sortType, setSortType] = useState([]);
   useEffect(() => {

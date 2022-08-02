@@ -1,5 +1,5 @@
 
-import { React, useState, useEffect } from 'react'
+import React from 'react'
 import database from "../Dataset/database.json";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
