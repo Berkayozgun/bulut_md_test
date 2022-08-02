@@ -18,8 +18,8 @@ function Movies() {                                                             
     var lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
-  // eslint-disable-next-line
-
+  
+// eslint-disable-next-line
   const [data, setData] = useState([]);                                         /* Filmlerin sıralamasının uygulandığı state */
   
   const [sortType, setSortType] = useState([]);                                /*  Filmlerin sıralama tipinin tutulduğu state */
