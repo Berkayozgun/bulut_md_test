@@ -71,7 +71,7 @@ export default function Footer() {
                 sx={{ backgroundColor: "white", ml: 2 }}
               />
               <Link
-                href="privacyAgreement"
+                href="/PrivacyAgreement"
                 underline="hover"
                 sx={{ top: "auto", bottom: 0, color: "white" }}
               >
