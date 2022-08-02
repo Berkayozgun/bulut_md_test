@@ -10,13 +10,15 @@ function Homepage() {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        marginTop: "4%",
-        width: "100%",
-        height: "100%",
+       display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          marginTop: "2%",
+          width: "99%",
+          height: "100%",
+          flexWrap: "wrap",
+          marginBottom: "4rem",
       }}
     >
       <Link

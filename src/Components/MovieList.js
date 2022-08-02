@@ -34,7 +34,6 @@ function MovieList(props) {
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "2%",
           width: "99%",
           height: "100%",
           flexWrap: "wrap",

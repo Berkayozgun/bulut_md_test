@@ -41,28 +41,35 @@ function Series(props) {
 
   return (
     <Box>
-      
-        <TextField
-          sx={{
-            width: "25rem",
-            height: "3.5rem",
-            justifyContent: "flex-start",
-            marginTop:"2.5rem",
-            marginLeft:"9.5rem"
-          }}
-          id="outlined-basic"
-          onChange={inputHandler}
-          variant="outlined"
-          fullWidth
-          label="Film / Dizi / Oyuncu ara"
-        />
-        <FormControl
+      <Box sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          flexWrap: "wrap",
+          marginBottom: "4rem",
+        }}>
+      <TextField
+        sx={{
+          width: "20rem",
+          height: "3.5rem",
+          justifyContent: "flex-start",
+          marginTop: "2.5rem",
+        }}
+        id="outlined-basic"
+        onChange={inputHandler}
+        variant="outlined"
+        fullWidth
+        label="Film / Dizi / Oyuncu ara"
+      />
+
+      <FormControl
         sx={{
           width: "15rem",
           height: "3.5rem",
           justifyContent: "flex-start",
           marginTop: "2.5rem",
-          marginLeft: "29.5rem",
+         
         }}
       >
         <InputLabel id="demo-simple-select-label">Sırala</InputLabel>
@@ -77,6 +84,7 @@ function Series(props) {
           <MenuItem value="desc">Yeniye Göre Sırala</MenuItem>
         </Select>
       </FormControl>
+      </Box>
       
       <SeriesList input={inputText} />
     </Box>

@@ -38,13 +38,20 @@ function Movies() {
 
   return (
     <Box>
+      <Box sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          flexWrap: "wrap",
+          marginBottom: "4rem",
+        }}>
       <TextField
         sx={{
-          width: "25rem",
+          width: "20rem",
           height: "3.5rem",
           justifyContent: "flex-start",
           marginTop: "2.5rem",
-          marginLeft: "9.5rem",
         }}
         id="outlined-basic"
         onChange={inputHandler}
@@ -59,7 +66,7 @@ function Movies() {
           height: "3.5rem",
           justifyContent: "flex-start",
           marginTop: "2.5rem",
-          marginLeft: "29.5rem",
+         
         }}
       >
         <InputLabel id="demo-simple-select-label">Sırala</InputLabel>
@@ -74,6 +81,7 @@ function Movies() {
           <MenuItem value="desc">Yeniye Göre Sırala</MenuItem>
         </Select>
       </FormControl>
+      </Box>
 
       <MovieList input={inputText} />
     </Box>
